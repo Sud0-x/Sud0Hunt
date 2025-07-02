@@ -1,0 +1,149 @@
+[
+    {
+        "name": "SQL Injection",
+        "description": "Injection of malicious SQL queries via input fields.",
+        "cwe": "CWE-89",
+        "severity": "high",
+        "detection_methods": [
+            "error_based",
+            "union_based",
+            "boolean_based_blind",
+            "time_based_blind"
+        ],
+        "remediation": "Use parameterized queries or prepared statements to prevent SQL injection."
+    },
+    {
+        "name": "Cross-Site Scripting (XSS)",
+        "description": "Injection of malicious scripts into web pages viewed by others.",
+        "cwe": "CWE-79",
+        "severity": "medium",
+        "detection_methods": [
+            "reflected",
+            "stored",
+            "DOM_based"
+        ],
+        "remediation": "Use output encoding/escaping for untrusted data and Content Security Policy."
+    },
+    {
+        "name": "Directory Traversal",
+        "description": "A vulnerability that allows attackers to access restricted directories and execute commands outside of the web server's root directory.",
+        "cwe": "CWE-22",
+        "severity": "high",
+        "detection_methods": [
+            "path_manipulation"
+        ],
+        "remediation": "Validate and sanitize user inputs and configure proper access controls."
+    },
+    {
+        "name": "Security Misconfiguration",
+        "description": "Security settings in application servers, web servers, databases, or frameworks are not defined, implemented, or configured securely.",
+        "cwe": "CWE-933",
+        "severity": "medium",
+        "detection_methods": [
+            "config_inspection"
+        ],
+        "remediation": "Implement secure configurations, disable default accounts, and enable detailed logging."
+    },
+    {
+        "name": "Server-Side Template Injection (SSTI)",
+        "description": "Server-side template injection occurs when user input is embedded in a template in an unsafe manner, allowing attackers to inject template directives.",
+        "cwe": "CWE-94",
+        "severity": "high",
+        "detection_methods": [
+            "template_payloads",
+            "expression_evaluation"
+        ],
+        "remediation": "Use secure template engines, avoid user input in templates, and implement proper input validation."
+    },
+    {
+        "name": "XML External Entity (XXE) Injection",
+        "description": "XML External Entity attack is a type of attack against an application that parses XML input containing malicious external entity references.",
+        "cwe": "CWE-611",
+        "severity": "high",
+        "detection_methods": [
+            "xml_entity_injection",
+            "dtd_exploitation"
+        ],
+        "remediation": "Disable XML external entity processing, use secure XML parsers, and validate XML input."
+    },
+    {
+        "name": "Insecure Deserialization",
+        "description": "Insecure deserialization flaws occur when an application deserializes untrusted data without proper validation.",
+        "cwe": "CWE-502",
+        "severity": "high",
+        "detection_methods": [
+            "serialized_object_injection",
+            "pickle_gadget_chains"
+        ],
+        "remediation": "Avoid deserializing untrusted data, use integrity checks, and implement allowlists for deserialization."
+    },
+    {
+        "name": "Command Injection",
+        "description": "Command injection is an attack in which arbitrary commands are executed on the host operating system via a vulnerable application.",
+        "cwe": "CWE-78",
+        "severity": "critical",
+        "detection_methods": [
+            "os_command_injection",
+            "shell_metacharacters"
+        ],
+        "remediation": "Use parameterized commands, avoid system calls with user input, and implement proper input validation."
+    },
+    {
+        "name": "LDAP Injection",
+        "description": "LDAP injection is an attack used to exploit web based applications that construct LDAP statements based on user input.",
+        "cwe": "CWE-90",
+        "severity": "high",
+        "detection_methods": [
+            "ldap_filter_injection",
+            "authentication_bypass"
+        ],
+        "remediation": "Use parameterized LDAP queries, validate and escape user input, and implement proper access controls."
+    },
+    {
+        "name": "NoSQL Injection",
+        "description": "NoSQL injection attacks target NoSQL databases by injecting malicious code into queries.",
+        "cwe": "CWE-943",
+        "severity": "high",
+        "detection_methods": [
+            "nosql_operator_injection",
+            "mongodb_injection"
+        ],
+        "remediation": "Use parameterized queries, validate input types, and implement proper authentication."
+    },
+    {
+        "name": "Broken Authentication",
+        "description": "Authentication and session management vulnerabilities that allow attackers to compromise passwords, keys, or session tokens.",
+        "cwe": "CWE-287",
+        "severity": "high",
+        "detection_methods": [
+            "weak_password_policy",
+            "session_fixation",
+            "brute_force_susceptibility"
+        ],
+        "remediation": "Implement multi-factor authentication, secure session management, and strong password policies."
+    },
+    {
+        "name": "Business Logic Vulnerabilities",
+        "description": "Flaws in the design and implementation of an application that allow an attacker to elicit unintended behavior.",
+        "cwe": "CWE-840",
+        "severity": "medium",
+        "detection_methods": [
+            "workflow_bypass",
+            "race_conditions",
+            "privilege_escalation"
+        ],
+        "remediation": "Implement proper business logic validation, rate limiting, and comprehensive testing."
+    },
+    {
+        "name": "API Security Issues",
+        "description": "Vulnerabilities in API implementations that can lead to data exposure, unauthorized access, or service disruption.",
+        "cwe": "CWE-285",
+        "severity": "high",
+        "detection_methods": [
+            "api_enumeration",
+            "broken_object_level_authorization",
+            "excessive_data_exposure"
+        ],
+        "remediation": "Implement proper API authentication, authorization, rate limiting, and input validation."
+    }
+]

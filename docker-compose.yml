@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  sud0hunt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sud0hunt:latest
+    container_name: sud0hunt-scanner
+    volumes:
+      # Mount reports directory to persist scan results
+      - ./reports:/app/reports
+      # Mount data directory for custom wordlists (optional)
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - sud0hunt-network
+    # Example command - override as needed
+    command: ["--help"]
+    # Uncomment below to run a specific scan
+    # command: ["-t", "example.com", "--full-scan"]
+
+  # Optional: Add a web interface (future feature)
+  # sud0hunt-web:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.web
+  #   image: sud0hunt-web:latest
+  #   container_name: sud0hunt-web
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - sud0hunt
+  #   networks:
+  #     - sud0hunt-network
+
+networks:
+  sud0hunt-network:
+    driver: bridge
+
+volumes:
+  sud0hunt-reports:
+    driver: local
+  sud0hunt-data:
+    driver: local

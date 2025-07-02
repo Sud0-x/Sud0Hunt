@@ -1,0 +1,49 @@
+# Include documentation files
+include README.md
+include LICENSE
+include CHANGELOG.md
+include CONTRIBUTING.md
+include SECURITY.md
+include PERFORMANCE_ENHANCEMENTS.md
+
+# Include requirements and setup files
+include requirements.txt
+include setup.py
+
+# Include data files
+include data/*.json
+include exploits_db.json
+include vulnerabilities.json
+
+# Include reports directory structure
+recursive-include reports *.gitkeep
+
+# Exclude development and cache files
+exclude .gitignore
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude __pycache__
+exclude .DS_Store
+exclude Thumbs.db
+
+# Exclude virtual environment and build directories
+prune .venv/
+prune venv/
+prune build/
+prune dist/
+prune *.egg-info/
+prune __pycache__/
+
+# Exclude temporary and log files
+exclude *.log
+exclude *.tmp
+exclude *.temp
+prune reports/*.json
+prune reports/*.html
+prune reports/*.log
+
+# Include source code
+recursive-include core *.py
+recursive-include plugins *.py
+include cli.py
